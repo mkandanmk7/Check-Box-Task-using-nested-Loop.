@@ -17,7 +17,7 @@ const Scopes = ({
 
   const handleChange = (data, e) => {
     console.log("in handle change Scope");
-    onChange && handleChange(data, e);
+    onChange && onChange(data, e);
   };
 
   const isReadScope = () => {

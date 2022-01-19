@@ -14,8 +14,9 @@ const App = () => {
 
   // console.log(resources);
 
-  const onClickHandler = useCallback(
+  const resourceClickHandler = useCallback(
     (data) => {
+      console.log("data ", data);
       const { resourceIndex } = data;
       const cacheResources = { ...resources };
       cacheResources[resourceIndex].checked = !resources[resourceIndex].checked;
@@ -24,7 +25,7 @@ const App = () => {
     [resources]
   );
 
-  const onScopeClickHandler = () => {
+  const scopeClickHandler = () => {
     return "hi";
   };
 
@@ -37,7 +38,7 @@ const App = () => {
             <div key={"Resource_key_" + resourceIndex}>
               <Resource
                 resource={{ ...resource, index: resourceIndex }}
-                onChange={onClickHandler}
+                onChange={resourceClickHandler}
               />
               {/* mapping scopes array */}
               {map(resource.scopes, (scope, scopeIndex) => {
@@ -51,7 +52,7 @@ const App = () => {
                         resourceIndex,
                       }}
                       scopes={resource.scopes}
-                      onChange={onScopeClickHandler}
+                      onChange={scopeClickHandler}
                       forceChecked={resource.checked}
                       selectedScopeCategories={selectedScopeCategories}
                     />

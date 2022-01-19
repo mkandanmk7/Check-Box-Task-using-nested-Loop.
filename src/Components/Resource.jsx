@@ -6,7 +6,7 @@ const Resource = ({ resource, onChange }) => {
   const { id, checked, index } = resource;
 
   const handleChange = (data, e) => {
-    onChange && handleChange(data, e);
+    onChange && onChange(data, e);
   };
   return (
     <>
