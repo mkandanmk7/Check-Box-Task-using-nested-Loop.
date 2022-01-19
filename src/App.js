@@ -12,11 +12,8 @@ const App = () => {
 
   const [selectedScopeCategories, setSelectedScopeCategories] = useState([]);
 
-  // console.log(resources);
-
   const resourceClickHandler = useCallback(
     (data) => {
-      // console.log("data ", data);
       const { resourceIndex } = data;
       const cacheResources = { ...resources };
       cacheResources[resourceIndex].checked = !resources[resourceIndex].checked;
@@ -35,13 +32,11 @@ const App = () => {
         }
       });
     });
-    // console.log(categories);
 
     return categories;
   };
   const scopeClickHandler = useCallback(
     (data) => {
-      // console.log("scope data:", data);
       const { selectedScope, resourceIndex, scopeIndex } = data;
       if (!selectedScope) return;
 
@@ -56,13 +51,10 @@ const App = () => {
     [resources]
   );
 
-  console.log(resources);
-
   return (
     <>
       <FormWrapper>
         {map(resources, (resource, resourceIndex) => {
-          // console.log(value);
           return (
             <div key={"Resource_key_" + resourceIndex}>
               <Resource
@@ -71,7 +63,6 @@ const App = () => {
               />
               {/* mapping scopes array */}
               {map(resource.scopes, (scope, scopeIndex) => {
-                // console.log(scope); //object in each scopes array
                 return (
                   <ScopesWrapper key={"scope_key_" + scopeIndex}>
                     <Scopes

@@ -2,7 +2,6 @@ import React from "react";
 import CheckBox from "./CheckBox";
 
 const Resource = ({ resource, onChange }) => {
-  // console.log(resource);
   const { id, checked, index } = resource;
 
   const handleChange = (data, e) => {
