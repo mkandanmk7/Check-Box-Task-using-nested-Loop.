@@ -1,0 +1,25 @@
+import React from "react";
+import CheckBox from "./CheckBox";
+
+const Resource = ({ resource, onChange }) => {
+  // console.log(resource);
+  const { id, checked, index } = resource;
+
+  const handleChange = (data, e) => {
+    onChange && handleChange(data, e);
+  };
+  return (
+    <>
+      <CheckBox
+        label={id}
+        data={{ resourceIndex: index }}
+        checked={checked}
+        onChange={handleChange}
+        name="resource"
+        id={id}
+      />
+    </>
+  );
+};
+
+export default Resource;
