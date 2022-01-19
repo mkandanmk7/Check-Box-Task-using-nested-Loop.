@@ -25,9 +25,12 @@ const App = () => {
     [resources]
   );
 
-  const scopeClickHandler = () => {
-    return "hi";
-  };
+  const scopeClickHandler = useCallback(
+    (data) => {
+      console.log("scope data", data);
+    },
+    [resources]
+  );
 
   return (
     <>
