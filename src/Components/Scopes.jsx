@@ -16,7 +16,6 @@ const Scopes = ({
   const { label, checked, id, value, category } = item;
 
   const handleChange = (data, e) => {
-    console.log("in handle change Scope");
     onChange && onChange(data, e);
   };
 

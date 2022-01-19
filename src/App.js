@@ -25,12 +25,38 @@ const App = () => {
     [resources]
   );
 
+  //returns categories arr[];
+  const getSelectedScopeCategories = () => {
+    const categories = [];
+    map(resources, (resource) => {
+      map(resource.scopes, (scope) => {
+        if (!categories.includes(scope.category) && scope.checked) {
+          categories.push(scope.category);
+        }
+      });
+    });
+    console.log(categories);
+
+    return categories;
+  };
   const scopeClickHandler = useCallback(
     (data) => {
-      console.log("scope data", data);
+      console.log("scope data:", data);
+      const { selectedScope, resourceIndex, scopeIndex } = data;
+      if (!selectedScope) return;
+
+      const cacheResources = { ...resources };
+
+      cacheResources[resourceIndex].scopes[scopeIndex].checked =
+        !selectedScope.checked;
+
+      const scopeCategories = getSelectedScopeCategories();
+      setSelectedScopeCategories(scopeCategories);
     },
     [resources]
   );
+
+  console.log(resources);
 
   return (
     <>
