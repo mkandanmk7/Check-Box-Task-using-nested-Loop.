@@ -16,7 +16,7 @@ const App = () => {
 
   const resourceClickHandler = useCallback(
     (data) => {
-      console.log("data ", data);
+      // console.log("data ", data);
       const { resourceIndex } = data;
       const cacheResources = { ...resources };
       cacheResources[resourceIndex].checked = !resources[resourceIndex].checked;
@@ -35,13 +35,13 @@ const App = () => {
         }
       });
     });
-    console.log(categories);
+    // console.log(categories);
 
     return categories;
   };
   const scopeClickHandler = useCallback(
     (data) => {
-      console.log("scope data:", data);
+      // console.log("scope data:", data);
       const { selectedScope, resourceIndex, scopeIndex } = data;
       if (!selectedScope) return;
 

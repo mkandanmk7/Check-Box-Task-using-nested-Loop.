@@ -11,6 +11,7 @@ const Scopes = ({
   selectedScopeCategories = [],
 }) => {
   // console.log(forceChecked);
+  console.log("selectedScopeCategories", selectedScopeCategories);
   const { item, resourceIndex, scopeIndex } = scope;
   // console.log("item:", item);
   const { label, checked, id, value, category } = item;

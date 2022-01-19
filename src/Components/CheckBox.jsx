@@ -10,7 +10,6 @@ const CheckBox = ({
   data = {},
   forceChecked,
 }) => {
-  // console.log("data", data);
   const key = name + "_" + id;
   const isChecked = () => {
     return forceChecked ? forceChecked : !!checked;
